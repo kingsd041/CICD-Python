@@ -1,0 +1,7 @@
+stages:
+- name: test1
+  steps:
+  - runScriptConfig:
+      image: ubuntu
+      shellScript: date
+timeout: 60
