@@ -5,3 +5,4 @@ stages:
       image: ubuntu
       shellScript: date
 timeout: 60
+notification: {}
