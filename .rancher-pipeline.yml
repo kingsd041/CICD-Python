@@ -16,5 +16,12 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+- name: catalog
+  steps:
+  - applyAppConfig:
+      catalogTemplate: cattle-global-data:library-redis
+      version: 9.0.2
+      name: hailong-redis
+      targetNamespace: default
 timeout: 60
 notification: {}
