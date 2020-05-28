@@ -6,11 +6,11 @@ stages:
       shellScript: date
   - runScriptConfig:
       image: ubuntu
-      shellScript: echo "*******${hailong-password1}"
+      shellScript: echo "*******${hailongpassword1}"
     envFrom:
     - sourceName: pipeline-api-key
       sourceKey: API_TOKEN
-      targetKey: hailong-password1
+      targetKey: hailongpassword1
 - name: image
   steps:
   - publishImageConfig:
@@ -21,7 +21,7 @@ stages:
       registry: index.docker.io
   - runScriptConfig:
       image: ubuntu
-      shellScript: echo "###### ${hailong-password1}"
+      shellScript: echo "###### ${hailongpassword1}"
 - name: deploy
   steps:
   - applyYamlConfig:
