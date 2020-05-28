@@ -3,6 +3,9 @@ stages:
   steps:
   - runScriptConfig:
       image: ubuntu
-      shellScript: date
+      shellScript: sleep 60
+  - runScriptConfig:
+      image: ubuntu
+      shellScript: sleep 100
 timeout: 60
 notification: {}
