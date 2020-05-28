@@ -26,5 +26,5 @@ stages:
 timeout: 60
 branch:
   include:
-  - master
+  - ksd
 notification: {}
