@@ -8,8 +8,8 @@ stages:
       image: ubuntu
       shellScript: echo "*******${hailong-password}"
     envFrom:
-    - sourceName: p-lrhhr-dockerregistryplrhhrpipeline
-      sourceKey: password
+    - sourceName: pipeline-api-key
+      sourceKey: API_TOKEN
       targetKey: hailong-password
 - name: image
   steps:
