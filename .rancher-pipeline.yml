@@ -9,7 +9,11 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./src/Dockerfile
       buildContext: .
-      tag: kingsd/cici-test:v1
+      tag: kingsd/cici-test:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34688
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
 notification: {}
