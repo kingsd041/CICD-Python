@@ -12,6 +12,15 @@ stages:
     envFrom:
     - sourceName: pipeline-api-key
       sourceKey: API_TOKEN
+  - runScriptConfig:
+      image: ubuntu
+      shellScript: |-
+        export
+
+        echo "## ${kkk}"
+    envFrom:
+    - sourceName: ns-d8jd8
+      sourceKey: kkk
 - name: image
   steps:
   - publishImageConfig:
