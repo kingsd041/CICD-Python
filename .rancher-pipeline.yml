@@ -21,7 +21,7 @@ stages:
       registry: index.docker.io
   - runScriptConfig:
       image: ubuntu
-      shellScript: echo "###### ${hailongpassword1}"
+      shellScript: echo "####### ${API_TOKEN}"
 - name: deploy
   steps:
   - applyYamlConfig:
