@@ -9,8 +9,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./src/Dockerfile
       buildContext: .
-      tag: kingsd/cici-test:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34688
+      tag: wanghl041/cicd-test:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: index.docker.io
 - name: deploy
   steps:
   - applyYamlConfig:
