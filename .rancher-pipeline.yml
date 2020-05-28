@@ -24,9 +24,7 @@ stages:
       name: hailong-redis
       targetNamespace: default
 timeout: 60
-notification:
-  recipients:
-  - recipient: messageeeee
-    notifier: c-d2zdz:n-cvj7k
-  condition:
-  - Success
+branch:
+  include:
+  - master
+notification: {}
