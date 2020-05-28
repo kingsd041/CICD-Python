@@ -4,6 +4,13 @@ stages:
   - runScriptConfig:
       image: ubuntu
       shellScript: date
+  - runScriptConfig:
+      image: ubuntu
+      shellScript: echo "*******${hailong-password}"
+    envFrom:
+    - sourceName: p-lrhhr-dockerregistryplrhhrpipeline
+      sourceKey: password
+      targetKey: hailong-password
 - name: image
   steps:
   - publishImageConfig:
@@ -12,17 +19,13 @@ stages:
       tag: wanghl041/cicd-test:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
+  - runScriptConfig:
+      image: ubuntu
+      shellScript: echo "###### ${hailong-password}"
 - name: deploy
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
-- name: catalog
-  steps:
-  - applyAppConfig:
-      catalogTemplate: cattle-global-data:library-redis
-      version: 9.0.2
-      name: hailong-redis
-      targetNamespace: default
 timeout: 60
 branch:
   include:
