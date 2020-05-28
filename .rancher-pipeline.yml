@@ -8,7 +8,7 @@ stages:
   steps:
   - publishImageConfig:
       dockerfilePath: ./src/Dockerfile
-      buildContext: .
+      buildContext: ./src
       tag: wanghl041/cicd-test:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
