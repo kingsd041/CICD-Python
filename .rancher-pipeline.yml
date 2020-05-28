@@ -6,11 +6,12 @@ stages:
       shellScript: date
   - runScriptConfig:
       image: ubuntu
-      shellScript: export
+      shellScript: |-
+        export
+        echo "##${API_TOKEN}"
     envFrom:
     - sourceName: pipeline-api-key
       sourceKey: API_TOKEN
-      targetKey: hailongpassword1
 - name: image
   steps:
   - publishImageConfig:
