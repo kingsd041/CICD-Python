@@ -26,9 +26,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./src/Dockerfile
       buildContext: ./src
-      tag: wanghl041/cicd-test:${CICD_EXECUTION_SEQUENCE}
+      tag: hailong/cicd-test:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: index.docker.io
+      registry: harbor.jacie.work
   - runScriptConfig:
       image: ubuntu
       shellScript: export
